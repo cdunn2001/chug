@@ -1,6 +1,61 @@
+# Compiled source #
+###################
+*.com
 *.class
+*.dll
+*.exe
+*.o
+*.lo
+*.slo
+*.[568]
+*.py[oc]
+*.so
+*.a
+*.la
+*.lai
 
-# Package Files #
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
 *.jar
 *.war
 *.ear
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# MS #
+######
+*.swp
+*.suo
+*.dll
+*.pdb
+*.cache
+#bin/
+#obj/
+
+# Misc #
+########
+
+*~
+*.swp
+_ReSharper*
+.svn/

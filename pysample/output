@@ -1,0 +1,11 @@
+$ make
+python3.1 chug.py
+
+<function myfunc at 0x1006c6380>
+FullArgSpec(args=['x'], varargs=None, varkw=None, defaults=None, kwonlyargs=[], kwonlydefaults=None, annotations={'x': <class 'int'>, 'return': <class 'list'>})
+
+<class 'api.Foo'>
+         <function makeFoo at 0x1006c6490>
+         FullArgSpec(args=['x', 'y', 'z'], varargs=None, varkw=None, defaults=None, kwonlyargs=[], kwonlydefaults=None, annotations={'y': <class 'str'>, 'x': <class 'int'>, 'return': 'Foo'})
+         <function staticFoo at 0x1006c6518>
+         FullArgSpec(args=['x'], varargs=None, varkw=None, defaults=None, kwonlyargs=[], kwonlydefaults=None, annotations={'x': <class 'float'>})
