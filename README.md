@@ -30,7 +30,7 @@ Maybe not, but see [IMDB][].
 
 Architecture of **CHUG**
 ---------------------------
-![CHUG Flowchart](http://dl.dropbox.com/u/15086106/chug/chug-flowchart.png)
+![CHUG Flowchart](http://dl.dropbox.com/u/15086106/chug/flowchart.png)
 
 ### Basic operation
 ---
