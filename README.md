@@ -107,4 +107,4 @@ See the [wiki][].
 
 [imdb]:     http://www.imdb.com/title/tt0087015/ "C.H.U.D."
 [wiki]:     https://github.com/cdunn2001/chug/wiki/_pages "CHUG GitHub Wiki"
-[mit]:      http://www.opensource.org/licenses/mit-license.php "MIT License"
+[license]:      http://www.opensource.org/licenses/mit-license.php "MIT License"
