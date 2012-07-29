@@ -1,0 +1,22 @@
+# vim: et ts=8 sts=2 sw=2
+---
+classes:
+  - MyClass:
+    - methods:
+      # Note: no overloading
+      bar: # by default, void bar();
+      baz:
+        - return: int
+        - params:
+          - x: int
+          - y: str
+          - z: float
+    - staticmethods:
+      - g:
+        - return: double
+functions:
+  - myFunc:
+  - myFunc2:
+    - params:
+      - p1: int
+
