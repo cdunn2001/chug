@@ -97,9 +97,14 @@ Because a well-written C++ library leaves too much exposed, by the nature of C++
 A shared library should hide both data members and
 virtual methods so that minor revisions can be swapped in safely.
 
+License
+-------
+This work is distributed under the MIT [license][]. See "LICENSE" file.
+
 For more information
 --------------------
 See the [wiki][].
 
 [imdb]:     http://www.imdb.com/title/tt0087015/ "C.H.U.D."
 [wiki]:     https://github.com/cdunn2001/chug/wiki/_pages "CHUG GitHub Wiki"
+[mit]:      http://www.opensource.org/licenses/mit-license.php "MIT License"
