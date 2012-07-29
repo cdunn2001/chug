@@ -3,9 +3,9 @@ JAVAC=javac
 #JAVA=/usr/bin/java -classpath=.
 
 default: sample
-sample: chug
-chug: Chug.class Foo.class
-	java Chug Foo
+sample: hug
+hug: Hug.class Foo.class
+	java Hug Foo
 
 %.class: %.java
 	${JAVAC} $<

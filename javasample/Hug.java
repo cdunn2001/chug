@@ -1,7 +1,7 @@
 // vim: et ts=8 sts=2 sw=2
 //import java.lang.reflect.Class;
 
-public class Chug {
+public class Hug {
   static void p(Object o) {
     System.out.println(o.toString());
   }
