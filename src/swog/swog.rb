@@ -23,8 +23,8 @@ module Chug
         Method.new(desc)
       }
     end
-    def to_s
-      method_text = @methods.join("\n  ")
+    def swog
+      method_text = @methods.map{|m| m.swog}.join("\n  ")
 <<EOF
 class #{@name}
 {
@@ -45,8 +45,8 @@ EOF
         Param.new(desc)
       }
     end
-    def to_s
-      param_text = @params.join(", ")
+    def swog
+      param_text = @params.map{|p| p.swog}.join(", ")
       "#{@return} #{@name}(#{param_text});"
     end
   end
@@ -56,7 +56,7 @@ EOF
       @name = desc['name']
       @type = desc['type']
     end
-    def to_s
+    def swog
       "#{@type} #{@name}"
     end
   end
@@ -72,6 +72,6 @@ chuy_top["classes"].each do |desc|
   puts "--- Chug representation:" if $debug
   pp c if $debug
   puts "--- C++ Underlayer:" if $debug
-  puts c
+  puts c.swog
 end
 
