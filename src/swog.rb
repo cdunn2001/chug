@@ -5,9 +5,9 @@
 require 'pp'; # for pretty-printing
 require 'yaml';
 
-#$LOAD_PATH << "../../src"
+#$LOAD_PATH << "../src"
 #require 'chug';
-require "#{File.dirname(__FILE__)}/../chug";
+require "#{File.dirname(__FILE__)}/chug";
 
 $\ = "\n"
 $debug = true
