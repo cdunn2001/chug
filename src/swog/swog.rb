@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 =begin
-   Initially, we dump only for Python.
 =end
 
-require 'yaml';
 require 'pp'; # for pretty-printing
+require 'yaml';
 
-# chuy is the full nested hash.
-# o is the output
+#$LOAD_PATH << "../../src"
+#require 'chug';
+require "#{File.dirname(__FILE__)}/../chug";
 
 $\ = "\n"
 $debug = true
@@ -15,14 +15,6 @@ $debug = true
 module Chug
 
   class Class
-    def initialize(desc)
-      desc['methods'] ||= {}
-
-      @name = desc['name']
-      @methods = desc['methods'].map{|desc|
-        Method.new(desc)
-      }
-    end
     def swog
       method_text = @methods.map{|m| m.swog}.join("\n  ")
 <<EOF
@@ -35,16 +27,6 @@ EOF
   end
 
   class Method
-    def initialize(desc)
-      desc['return'] ||= 'void'
-      desc['params'] ||= {}
-
-      @name = desc['name']
-      @return = desc['return']
-      @params = desc['params'].map{|desc|
-        Param.new(desc)
-      }
-    end
     def swog
       param_text = @params.map{|p| p.swog}.join(", ")
       "#{@return} #{@name}(#{param_text});"
@@ -52,14 +34,11 @@ EOF
   end
 
   class Param
-    def initialize(desc)
-      @name = desc['name']
-      @type = desc['type']
-    end
     def swog
       "#{@type} #{@name}"
     end
   end
+
 end # module
 
 puts '--- Parsed CHUY:' if $debug
