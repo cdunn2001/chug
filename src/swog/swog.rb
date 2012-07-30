@@ -15,13 +15,12 @@ $debug = true
 module Chug
 
   class Class
-    def initialize(name, desc)
-      desc ||= {}
+    def initialize(desc)
       desc['methods'] ||= {}
 
-      @name = name
-      @methods = desc['methods'].each_pair.map{|k,v|
-        Method.new(k, v)
+      @name = desc['name']
+      @methods = desc['methods'].map{|desc|
+        Method.new(desc)
       }
     end
     def to_s
@@ -36,20 +35,31 @@ EOF
   end
 
   class Method
-    def initialize(name, desc)
-      desc ||= {}
+    def initialize(desc)
       desc['return'] ||= 'void'
       desc['params'] ||= {}
-      desc['paramorder'] ||= []
 
-      @name = name
+      @name = desc['name']
       @return = desc['return']
+      @params = desc['params'].map{|desc|
+        Param.new(desc)
+      }
     end
     def to_s
-      "#{@return} #{@name}();"
+      param_text = @params.join(", ")
+      "#{@return} #{@name}(#{param_text});"
     end
   end
 
+  class Param
+    def initialize(desc)
+      @name = desc['name']
+      @type = desc['type']
+    end
+    def to_s
+      "#{@type} #{@name}"
+    end
+  end
 end # module
 
 puts '--- Parsed CHUY:' if $debug
@@ -57,8 +67,8 @@ chuy_top = YAML.load(ARGF)
 #puts chuy_top.inspect
 pp chuy_top if $debug
 
-chuy_top["classes"].each_pair do |class_name, chuy_class|
-  c = Chug::Class.new(class_name, chuy_class)
+chuy_top["classes"].each do |desc|
+  c = Chug::Class.new(desc)
   puts "--- Chug representation:" if $debug
   pp c if $debug
   puts "--- C++ Underlayer:" if $debug
