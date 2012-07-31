@@ -1,6 +1,8 @@
 default:
 
 swog:
-	make -C tst/swog
+	+${MAKE} -C tst/swog
 java:
-	make -C javasample
+	+${MAKE} -C javasample
+foo:
+	+${MAKE} -C foo
